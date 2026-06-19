@@ -72,24 +72,6 @@ human-readable output to build Unreal's source control state, runs work on backg
 threads, and refreshes overlays on the game thread. Asset saves trigger a status
 refresh so freshly edited files show the correct state without a manual refresh.
 
-The CLI output format contract is documented in `Docs/LORE_CLI_OUTPUT_FORMATS.md`.
-
-## Validation
-
-Run the static layout check without a UE install:
-
-```powershell
-python Tools/validate_layout.py .
-```
-
-See `Docs/VALIDATION.md` for the full checklist including UE compile and automation
-test steps.
-
-## Building and packaging
-
-See `Tools/stage_plugin.ps1` to stage the plugin into a local UE project, and
-`Tools/package_plugin.ps1` to produce a release zip for a specific engine version.
-
 ## Known pre-1.0 limitations
 
 - `lore file history` is fetched once per file on large Content Browser selections;
