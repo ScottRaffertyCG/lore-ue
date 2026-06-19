@@ -30,7 +30,9 @@ public:
 	virtual bool QueryStateBranchConfig(const FString& ConfigSrc, const FString& ConfigDest) override { return false; }
 	virtual void RegisterStateBranches(const TArray<FString>& BranchNames, const FString& ContentRoot) override {}
 	virtual int32 GetStateBranchIndex(const FString& BranchName) const override { return INDEX_NONE; }
+#if ENGINE_MAJOR_VERSION == 5 && ENGINE_MINOR_VERSION >= 6
 	virtual bool GetStateBranchAtIndex(int32 BranchIndex, FString& OutBranchName) const override { return false; }
+#endif
 	virtual ECommandResult::Type GetState(const TArray<FString>& InFiles, TArray<FSourceControlStateRef>& OutState, EStateCacheUsage::Type InStateCacheUsage) override;
 	virtual ECommandResult::Type GetState(const TArray<FSourceControlChangelistRef>& InChangelists, TArray<FSourceControlChangelistStateRef>& OutState, EStateCacheUsage::Type InStateCacheUsage) override;
 	virtual TArray<FSourceControlStateRef> GetCachedStateByPredicate(TFunctionRef<bool(const FSourceControlStateRef&)> Predicate) const override;
@@ -50,6 +52,11 @@ public:
 #if ENGINE_MAJOR_VERSION == 5 && ENGINE_MINOR_VERSION < 8
 	virtual TOptional<bool> IsAtLatestRevision() const override;
 	virtual TOptional<int> GetNumLocalChanges() const override;
+#endif
+#if ENGINE_MAJOR_VERSION == 5 && ENGINE_MINOR_VERSION >= 8
+	virtual bool UsesSoftRevertOnDelete() const override { return false; }
+	virtual TOptional<bool> HasChangesToSync() const override { return TOptional<bool>(); }
+	virtual TOptional<bool> HasChangesToCheckIn() const override { return TOptional<bool>(); }
 #endif
 	virtual void Tick() override;
 	virtual TArray<TSharedRef<class ISourceControlLabel>> GetLabels(const FString& InMatchingSpec) const override;
