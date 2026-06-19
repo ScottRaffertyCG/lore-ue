@@ -42,6 +42,8 @@ build or link.
 
 If `lore` is not on your `PATH`, set the executable path in the Lore settings panel.
 
+![Revision Control Settings panel showing Lore selected as the provider](Media/revision-control-settings.png)
+
 ## Overview
 
 - **Status overlays** — modified, added, deleted, and locked assets are surfaced in
