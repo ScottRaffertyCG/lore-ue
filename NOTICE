@@ -1,0 +1,10 @@
+LoreSourceControl is an independently authored Unreal Engine editor plugin.
+
+This repository intentionally does not include Epic Games source-file copyright
+notices, copied Epic Games provider implementation code, or Unreal Engine source
+files. It references Unreal Engine public interfaces by include name only and is
+intended to be compiled by users who already have access to their own Unreal
+Engine installation.
+
+Unreal Engine and Epic Games are trademarks or registered trademarks of Epic
+Games, Inc. Lore is owned by its respective rights holder.

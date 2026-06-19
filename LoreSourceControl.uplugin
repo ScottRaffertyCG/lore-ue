@@ -1,0 +1,19 @@
+{
+  "FileVersion": 3,
+  "Version": 1,
+  "VersionName": "0.1.0",
+  "FriendlyName": "Lore Source Control",
+  "Description": "Native Lore source control provider for Unreal Engine.",
+  "Category": "Revision Control",
+  "CreatedBy": "Pyre Labs",
+  "EnabledByDefault": true,
+  "CanContainContent": false,
+  "Installed": false,
+  "Modules": [
+    {
+      "Name": "LoreSourceControl",
+      "Type": "Editor",
+      "LoadingPhase": "Default"
+    }
+  ]
+}
